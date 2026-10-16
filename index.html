@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CIG — Centro de Iniciação em Ginásticas</title>
+<meta name="description" content="CIG – Centro de Iniciação em Ginásticas, Americana-SP. Ginástica Artística, Rítmica, Trampolim e iniciação motora.">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1512;
+  --paper:#ffffff;
+  --paper-2:#f6f3ee;
+  --maroon:#8f2e3b;
+  --maroon-dark:#6c2029;
+  --teal:#015379;
+  --muted:#6b6058;
+  --rule:#ddd5cc;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{font-family:'Work Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1180px,100% - 48px);margin-inline:auto}
+section{padding:96px 0}
+h1,h2,h3{font-family:'Playfair Display',serif;letter-spacing:-.01em;font-weight:700;color:var(--ink)}
+h2{font-size:clamp(2rem,4vw,2.9rem);line-height:1.1;margin-bottom:20px}
+.dek{font-size:1.15rem;color:var(--muted);max-width:56ch;font-style:italic;line-height:1.5}
+.rule{height:1px;background:var(--rule);border:0;margin:0}
+.rule-thick{height:3px;background:var(--ink);border:0;margin:0}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;font-weight:600;font-size:.95rem;border:2px solid var(--ink);transition:background .2s,color .2s,border-color .2s}
+.btn-solid{background:var(--ink);color:var(--paper)}
+.btn-solid:hover{background:var(--maroon);border-color:var(--maroon)}
+.btn-outline{background:transparent;color:var(--ink)}
+.btn-outline:hover{border-color:var(--maroon);color:var(--maroon)}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+
+/* masthead */
+.utility-bar{background:var(--ink);color:#fff;font-size:.78rem;padding:7px 0}
+.utility-bar .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.utility-bar a{opacity:.85}
+.utility-bar a:hover{opacity:1}
+header{position:sticky;top:0;z-index:50;background:var(--paper)}
+.masthead{display:flex;align-items:center;justify-content:space-between;padding:22px 0;gap:20px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand img{height:46px;width:auto}
+.brand span{font-family:'Playfair Display',serif;font-weight:800;font-size:1.9rem;letter-spacing:-.01em}
+.menu{display:flex;align-items:center;gap:30px;list-style:none}
+.menu a{font-size:.92rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;padding-bottom:3px;border-bottom:2px solid transparent}
+.menu a:hover{border-color:var(--maroon);color:var(--maroon)}
+.menu .btn{text-transform:none;letter-spacing:0;padding:10px 20px;font-size:.88rem}
+.burger{display:none;background:none;border:0;font-size:1.8rem;cursor:pointer;color:var(--ink)}
+
+/* hero */
+.hero{padding:64px 0 0}
+.hero-grid{display:grid;grid-template-columns:1.2fr .9fr;gap:60px;align-items:end}
+.kicker{font-size:.86rem;font-weight:600;color:var(--maroon);text-transform:uppercase;letter-spacing:.08em;margin-bottom:18px}
+.hero h1{font-size:clamp(2.8rem,6vw,5rem);line-height:.98;font-weight:800;margin-bottom:28px}
+.hero h1 em{font-style:italic;color:var(--maroon)}
+.hero .lede{font-size:1.2rem;color:var(--muted);max-width:52ch;margin-bottom:34px}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:12px}
+.hero-figure{position:relative}
+.hero-figure .frame{border:1px solid var(--ink);padding:10px}
+.hero-figure img{aspect-ratio:4/5;object-fit:cover;object-position:50% 18%;filter:saturate(.92)}
+.hero-figure figcaption{margin-top:12px;font-size:.84rem;color:var(--muted);display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--rule);padding-top:10px}
+.hero-figure figcaption b{color:var(--ink);font-weight:600}
+
+.stat-line{margin-top:60px;padding:26px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);display:grid;grid-template-columns:repeat(3,1fr)}
+.stat-line div{padding:0 24px;border-left:1px solid var(--rule)}
+.stat-line div:first-child{border-left:0;padding-left:0}
+.stat-line b{display:block;font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700}
+.stat-line span{color:var(--muted);font-size:.86rem}
+
+/* sobre */
+.about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:72px;align-items:start}
+.about-figure{border:1px solid var(--ink);padding:10px}
+.about-figure img{aspect-ratio:4/5;object-fit:cover;filter:saturate(.92)}
+.about-figure figcaption{margin-top:12px;font-size:.84rem;color:var(--muted);border-top:1px solid var(--rule);padding-top:10px}
+.lead-para::first-letter{font-family:'Playfair Display',serif;font-weight:800;font-size:3.6em;line-height:.8;float:left;margin:.06em .08em 0 0;color:var(--maroon)}
+.about ul{list-style:none;margin-top:28px;display:grid;gap:0}
+.about li{display:grid;grid-template-columns:2.4rem 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--rule)}
+.about li:last-child{border-bottom:1px solid var(--rule)}
+.about li b{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--maroon)}
+.about li strong{display:block;font-weight:700;margin-bottom:2px}
+.about li p{color:var(--muted);font-size:.95rem}
+
+/* programa / modalidades */
+.program{background:var(--paper-2)}
+.program-list{margin-top:48px}
+.program-row{display:grid;grid-template-columns:5rem 1fr 2fr;gap:28px;align-items:start;padding:30px 0;border-top:1px solid var(--rule)}
+.program-list>.program-row:last-child{border-bottom:1px solid var(--rule)}
+.program-row .num{font-family:'Playfair Display',serif;font-style:italic;font-size:2rem;color:var(--maroon);line-height:1}
+.program-row h3{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700}
+.program-row p{color:var(--muted)}
+
+/* turmas */
+.stages{margin-top:48px;display:grid;gap:0}
+.stage{display:grid;grid-template-columns:7rem 1fr;gap:28px;padding:28px 0;border-top:1px solid var(--rule)}
+.stages>.stage:last-child{border-bottom:1px solid var(--rule)}
+.stage .roman{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--ink)}
+.stage h3{font-size:1.3rem;margin-bottom:4px}
+.stage p{color:var(--muted)}
+
+/* galeria */
+.gallery-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.tag{font-size:.84rem;font-weight:600;color:var(--maroon);border:1px solid var(--maroon);padding:7px 14px}
+.photo-grid{margin-top:48px;display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.photo-grid figure{overflow:hidden}
+.photo-grid img{width:100%;height:100%;object-fit:cover;filter:saturate(.9)}
+.photo-grid figcaption{margin-top:8px;font-size:.8rem;color:var(--muted)}
+.pg-1{grid-column:span 4;aspect-ratio:16/10}
+.pg-1 img{aspect-ratio:16/10}
+.pg-2{grid-column:span 2;aspect-ratio:3/4}
+.pg-2 img{aspect-ratio:3/4}
+.pg-3{grid-column:span 2;aspect-ratio:3/4}
+.pg-3 img{aspect-ratio:3/4}
+.pg-4{grid-column:span 2;aspect-ratio:3/4}
+.pg-4 img{aspect-ratio:3/4}
+.pg-5{grid-column:span 3;aspect-ratio:4/3}
+.pg-5 img{aspect-ratio:4/3}
+.pg-6{grid-column:span 3;aspect-ratio:4/3}
+.pg-6 img{aspect-ratio:4/3}
+
+/* contato */
+.contact{background:var(--ink);color:#fff}
+.contact h2{color:#fff}
+.contact .dek{color:rgba(255,255,255,.72)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:48px}
+.contact .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.contact .btn-outline{border-color:rgba(255,255,255,.5);color:#fff}
+.contact .btn-outline:hover{border-color:var(--teal);color:var(--teal)}
+.contact .btn-solid{background:#fff;color:var(--ink);border-color:#fff}
+.contact .btn-solid:hover{background:var(--maroon);color:#fff;border-color:var(--maroon)}
+.info-list{margin-top:36px;display:grid;gap:0}
+.info-list>div{padding:18px 0;border-top:1px solid rgba(255,255,255,.18)}
+.info-list b{display:block;font-family:'Playfair Display',serif;font-size:1.05rem;margin-bottom:4px}
+.info-list span,.info-list a{color:rgba(255,255,255,.75);font-size:.95rem}
+.info-list a{text-decoration:underline;text-decoration-color:rgba(255,255,255,.3)}
+.hours{width:100%;border-collapse:collapse;margin-top:6px}
+.hours td{padding:5px 0;font-size:.9rem;color:rgba(255,255,255,.7)}
+.hours td:last-child{text-align:right}
+.hours tr.today td{color:#fff;font-weight:700}
+.hours tr.today td:first-child::before{content:'— ';color:var(--maroon)}
+.panel{background:#fff;color:var(--ink);padding:38px}
+.panel h3{font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:24px}
+form{display:grid;gap:20px}
+.field label{display:block;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:6px}
+input,textarea,select{width:100%;padding:10px 2px;border:0;border-bottom:1.5px solid var(--rule);font:inherit;background:transparent;color:var(--ink)}
+input:focus,textarea:focus,select:focus{border-color:var(--maroon);outline:none}
+textarea{min-height:76px;resize:vertical}
+.map-wrap{margin-top:56px;border:1px solid rgba(255,255,255,.2);line-height:0}
+.map-wrap iframe{width:100%;height:380px;border:0;display:block;filter:grayscale(.3) invert(.92) contrast(.9)}
+
+footer{background:var(--paper);padding:36px 0;border-top:1px solid var(--rule)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;font-size:.86rem;color:var(--muted)}
+footer .brand span{font-size:1.2rem}
+footer a:hover{color:var(--maroon)}
+
+@media(max-width:900px){
+  section{padding:68px 0}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-figure{max-width:420px}
+  .stat-line{grid-template-columns:1fr;gap:16px}
+  .stat-line div{border-left:0;border-top:1px solid var(--rule);padding:16px 0 0}
+  .stat-line div:first-child{border-top:0;padding-top:0}
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .about-figure{max-width:380px}
+  .program-row{grid-template-columns:3.2rem 1fr;}
+  .program-row p{grid-column:2}
+  .stage{grid-template-columns:4rem 1fr}
+  .photo-grid{grid-template-columns:repeat(2,1fr)}
+  .pg-1,.pg-2,.pg-3,.pg-4,.pg-5,.pg-6{grid-column:span 1;aspect-ratio:4/5}
+  .pg-1 img,.pg-5 img,.pg-6 img{aspect-ratio:4/5}
+  .contact-grid{grid-template-columns:1fr;gap:40px}
+  .burger{display:block}
+  .menu{position:fixed;inset:0;background:var(--paper);flex-direction:column;justify-content:center;align-items:center;gap:28px;display:none}
+  .menu.open{display:flex}
+  .menu a{font-size:1.3rem}
+  .utility-bar .wrap{font-size:.72rem}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="utility-bar">
+  <div class="wrap">
+    <span>Americana · SP — desde a iniciação até a competição</span>
+    <a href="https://www.instagram.com/ciginasticas/" target="_blank" rel="noopener">@ciginasticas</a>
+  </div>
+</div>
+
+<header id="top">
+  <div class="wrap masthead">
+    <a href="#top" class="brand"><img src="logo-mark.png" alt="Logo CIG"><span>CIG</span></a>
+    <button class="burger" aria-label="Abrir menu" onclick="document.querySelector('.menu').classList.toggle('open')">☰</button>
+    <ul class="menu" onclick="this.classList.remove('open')">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#programa">Modalidades</a></li>
+      <li><a href="#turmas">Turmas</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#contato">Contato</a></li>
+      <li><a class="btn btn-solid" href="#contato">Agendar aula</a></li>
+    </ul>
+  </div>
+  <div class="rule-thick"></div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="kicker">Centro de Iniciação em Ginásticas</p>
+        <h1>Equilíbrio e coragem<br>começam <em>aqui.</em></h1>
+        <p class="lede">O CIG apresenta a ginástica artística, rítmica e de trampolim às crianças e jovens de Americana, com progressão técnica, segurança e uma boa dose de alegria em cada aula.</p>
+        <div class="cta">
+          <a class="btn btn-solid" href="#contato">Agendar aula experimental</a>
+          <a class="btn btn-outline" href="https://wa.me/5519998044742" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        </div>
+      </div>
+      <figure class="hero-figure">
+        <div class="frame"><img src="img/ginastica-aerobica.jpg" alt="Ginasta em salto"></div>
+        <figcaption><span>Fig. 1</span><b>Salto em exercício de solo</b></figcaption>
+      </figure>
+    </div>
+
+    <div class="stat-line">
+      <div><b>Iniciação à competição</b><span>turmas para cada fase</span></div>
+      <div><b>Equipe especializada</b><span>professoras formadas em ginástica</span></div>
+      <div><b>Turmas por idade</b><span>grupos pequenos e progressivos</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="wrap about-grid">
+    <figure class="about-figure">
+      <img src="img/cig-02.jpg" alt="Turma do CIG reunida após o treino">
+      <figcaption><span>Fig. 2</span> — Turma reunida após o treino, no tatame.</figcaption>
+    </figure>
+    <div>
+      <h2>Ginástica como base de uma vida ativa</h2>
+      <p class="lead-para">O Centro de Iniciação em Ginásticas apresenta as modalidades da ginástica de forma progressiva, respeitando o tempo de cada aluno — da primeira cambalhota ao primeiro pódio, para quem quiser chegar lá. O trabalho é conduzido por uma equipe formada em educação física e ginástica, em turmas pequenas o bastante para que cada criança seja acompanhada de perto.</p>
+      <ul>
+        <li><b>01</b><div><strong>Aprendizado gradual</strong><p>Do fundamento ao movimento mais complexo.</p></div></li>
+        <li><b>02</b><div><strong>Ambiente acolhedor</strong><p>Espaço seguro, motivador e pensado para crianças.</p></div></li>
+        <li><b>03</b><div><strong>Corpo e disciplina</strong><p>Força, flexibilidade e coordenação em cada aula.</p></div></li>
+        <li><b>04</b><div><strong>Recreação ou competição</strong><p>Cada família escolhe o caminho do seu aluno.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="programa" class="program">
+  <div class="wrap">
+    <h2>O programa</h2>
+    <p class="dek">Um aparelho para cada talento — da iniciação às especialidades olímpicas.</p>
+    <div class="program-list">
+      <div class="program-row"><span class="num">I</span><h3>Ginástica Artística</h3><p>Solo, barras, trave e salto: força, equilíbrio e precisão reunidos em cada série.</p></div>
+      <div class="program-row"><span class="num">II</span><h3>Ginástica Rítmica</h3><p>Graça e expressão corporal com fita, bola, arco, corda e maças.</p></div>
+      <div class="program-row"><span class="num">III</span><h3>Ginástica de Trampolim</h3><p>Saltos, altura e controle no ar, com progressão segura em cada etapa.</p></div>
+      <div class="program-row"><span class="num">IV</span><h3>Iniciação Motora</h3><p>Jogos e circuitos que constroem a base motora dos pequenos, brincando.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="turmas">
+  <div class="wrap">
+    <h2>Evolução em cada etapa</h2>
+    <p class="dek">As turmas acompanham o aluno como uma série na trave: um elemento de cada vez, até a sequência completa.</p>
+    <div class="stages">
+      <div class="stage"><span class="roman">1</span><div><h3>Descobrir</h3><p>Primeiro contato com os aparelhos, em jogos e circuitos lúdicos.</p></div></div>
+      <div class="stage"><span class="roman">2</span><div><h3>Aprender</h3><p>Fundamentos técnicos e postura corporal, com acompanhamento próximo.</p></div></div>
+      <div class="stage"><span class="roman">3</span><div><h3>Evoluir</h3><p>Sequências e novos elementos para ganhar confiança no aparelho.</p></div></div>
+      <div class="stage"><span class="roman">4</span><div><h3>Brilhar</h3><p>Apresentações, festivais e, para quem quiser, treino competitivo.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="wrap">
+    <div class="gallery-head">
+      <div>
+        <h2>Bastidores e conquistas</h2>
+        <p class="dek">Treinos, aulas e competições: um pouco do que acontece no tatame e na trave.</p>
+      </div>
+      <span class="tag">Medalhas · Jogos Regionais de Sumaré</span>
+    </div>
+    <div class="photo-grid">
+      <figure class="pg-1"><img loading="lazy" src="img/cig-04.jpg" alt="Ginastas em treino na trave"><figcaption>Treino de ginástica artística.</figcaption></figure>
+      <figure class="pg-2"><img loading="lazy" src="img/cig-07.jpg" alt="Professoras do CIG"><figcaption>A equipe do CIG.</figcaption></figure>
+      <figure class="pg-3"><img loading="lazy" src="img/cig-08.jpg" alt="Aquecimento das ginastas mirins"><figcaption>Aquecimento antes do treino.</figcaption></figure>
+      <figure class="pg-4"><img loading="lazy" src="img/cig-09.jpg" alt="Alunas do CIG se cumprimentando"><figcaption>Companheirismo em quadra.</figcaption></figure>
+      <figure class="pg-5"><img loading="lazy" src="img/cig-01.jpg" alt="Equipe do CIG nos Jogos Regionais"><figcaption>Equipe nos Jogos Regionais.</figcaption></figure>
+      <figure class="pg-6"><img loading="lazy" src="img/cig-06.jpg" alt="Medalhistas do CIG nos Jogos Regionais"><figcaption>Pódio nos Jogos Regionais.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <h2>Venha conhecer o CIG</h2>
+        <p class="dek">Agende uma aula experimental gratuita e veja a ginástica de perto, com quem vai treinar seu filho ou filha.</p>
+        <div class="cta">
+          <a class="btn btn-solid" href="https://wa.me/5519998044742" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+          <a class="btn btn-outline" href="https://www.instagram.com/ciginasticas/" target="_blank" rel="noopener">Seguir no Instagram</a>
+        </div>
+        <div class="info-list">
+          <div><b>Endereço</b><span>R. Duque de Caxias, 248 – Vila Santa Catarina, Americana – SP, 13466-320</span></div>
+          <div><b>Telefone</b><span><a href="tel:+5519998044742">(19) 99804-4742</a></span></div>
+          <div>
+            <b>Horário de funcionamento</b>
+            <table class="hours">
+              <tr data-day="1"><td>Segunda-feira</td><td>09:00–11:00, 14:00–20:00</td></tr>
+              <tr data-day="2"><td>Terça-feira</td><td>09:00–11:00, 14:00–20:00</td></tr>
+              <tr data-day="3"><td>Quarta-feira</td><td>09:00–11:00, 14:00–20:00</td></tr>
+              <tr data-day="4"><td>Quinta-feira</td><td>09:00–11:00, 14:00–20:00</td></tr>
+              <tr data-day="5"><td>Sexta-feira</td><td>14:00–18:00</td></tr>
+              <tr data-day="6"><td>Sábado</td><td>Fechado</td></tr>
+              <tr data-day="0"><td>Domingo</td><td>Fechado</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Marcar aula experimental</h3>
+        <form id="f">
+          <div class="field"><label for="nome">Nome do responsável</label><input id="nome" name="nome" required></div>
+          <div class="field"><label for="idade">Idade do aluno</label><input id="idade" name="idade" required></div>
+          <div class="field"><label for="mod">Modalidade de interesse</label>
+            <select id="mod" name="mod"><option>Ginástica Artística</option><option>Ginástica Rítmica</option><option>Ginástica de Trampolim</option><option>Iniciação Motora</option></select>
+          </div>
+          <div class="field"><label for="msg">Mensagem (opcional)</label><textarea id="msg" name="msg"></textarea></div>
+          <button class="btn btn-solid" type="submit" style="justify-self:start">Enviar pelo WhatsApp</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps?q=R.+Duque+de+Caxias,+248+-+Vila+Santa+Catarina,+Americana+-+SP,+13466-320&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de localização do CIG – R. Duque de Caxias, 248, Americana-SP"></iframe>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="#top" class="brand" style="display:flex;align-items:center;gap:10px"><img src="logo-mark.png" alt="" style="height:26px;width:auto"><span style="font-family:'Playfair Display',serif;font-weight:700;color:var(--ink)">CIG</span></a>
+    <span>© <span id="y"></span> CIG – Centro de Iniciação em Ginásticas, Americana-SP</span>
+    <a href="https://www.instagram.com/ciginasticas/" target="_blank" rel="noopener">Instagram</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent=new Date().getFullYear();
+  const todayRow=document.querySelector(`.hours tr[data-day="${new Date().getDay()}"]`);
+  if(todayRow) todayRow.classList.add('today');
+  document.getElementById('f').addEventListener('submit',e=>{
+    e.preventDefault();
+    const d=new FormData(e.target);
+    const t=`Olá, CIG! Sou ${d.get('nome')}. Gostaria de uma aula experimental de ${d.get('mod')} para aluno de ${d.get('idade')} anos. ${d.get('msg')||''}`;
+    open('https://wa.me/5519998044742?text='+encodeURIComponent(t),'_blank');
+  });
+</script>
+</body>
+</html>
